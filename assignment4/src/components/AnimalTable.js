@@ -7,9 +7,14 @@ export default function AnimalTable(props) {
     const [result, setResult] = useState('');
 
     useEffect(() => {
-        const randomIndex = Math.floor(Math.random() * animals.length);
-        setRandomAnimal(animals[randomIndex]);
+        generateRandomAnimal();
     }, []);
+
+    const generateRandomAnimal = () => {
+        const randomIndex = Math.floor(Math.random() * 10) + 1;
+        setRandomAnimal(animals[randomIndex]);
+        setResult('');
+    };
 
 
     const handleAnimalClick = (selectedAnimal) => {
@@ -23,6 +28,7 @@ export default function AnimalTable(props) {
     if (!randomAnimal) {
         return <div className="loading">Loading...</div>;
     }
+
     return (
         <div className='gameContainer'>
             <table className='game-table'>
@@ -38,12 +44,12 @@ export default function AnimalTable(props) {
                 </thead>
                 <tbody>
                     <tr>
-                        <td className='result-col'>
+                        <td className='result-col' width="10%">
                             <h2>{result}</h2></td>
 
-                        <td className='animalname-col'>
+                        <td className='animalname-col' width="20%">
                             <h2>{randomAnimal.name.toUpperCase()}</h2></td>
-                        <td className='animalgrid-col'>
+                        <td className='animalgrid-col' width="70%">
                             <div>
                                 <div className='animalgrid'>
                                     {animals.map((animal) => (
