@@ -1,6 +1,19 @@
 import { animals } from '../assets/data/AnimalsDb';
+import { useState } from 'react';
 
 export default function AnimalTable(props) {
+    const [randomAnimal,setRandomAnimal]= useState('');
+    const [selectedAnimal,setSelectedAnimal]= useState('');
+    const [result,setResult]= useState('');
+
+    const handleAnimalClick=(selectedAnimal)=>{
+        if(selectedAnimal === randomAnimal){
+            setResult('WIN');
+        }else{
+            setResult('LOSE');
+        }
+    };
+    
     return (
         <div className='gameContainer'>
             <table className='game-table'>
