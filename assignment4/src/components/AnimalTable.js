@@ -2,18 +2,18 @@ import { animals } from '../assets/data/AnimalsDb';
 import { useState } from 'react';
 
 export default function AnimalTable(props) {
-    const [randomAnimal,setRandomAnimal]= useState('');
-    const [selectedAnimal,setSelectedAnimal]= useState('');
-    const [result,setResult]= useState('');
+    const [randomAnimal, setRandomAnimal] = useState('');
+    const [selectedAnimal, setSelectedAnimal] = useState('');
+    const [result, setResult] = useState('');
 
-    const handleAnimalClick=(selectedAnimal)=>{
-        if(selectedAnimal === randomAnimal){
+    const handleAnimalClick = (selectedAnimal) => {
+        if (selectedAnimal === randomAnimal) {
             setResult('WIN');
-        }else{
+        } else {
             setResult('LOSE');
         }
     };
-    
+
     return (
         <div className='gameContainer'>
             <table className='game-table'>
@@ -22,19 +22,27 @@ export default function AnimalTable(props) {
                         <th colspan="3">Animal Matching Game</th>
                     </tr>
                     <tr>
-                        <td >Result</td>
-                        <td>Animal Name</td>
-                        <td>Select the Animal</td>
+                        <th>Result</th>
+                        <th>Animal Name</th>
+                        <th>Select the Animal</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><h2>Result</h2></td>
+                        <td className='result-col'>
+                            <h2>Result</h2></td>
 
-                        <td><h2>Animal Name</h2></td>
-                        <td>
+                        <td className='animalname-col'>
+                            <h2>{randomAnimal.toUpperCase()}</h2></td>
+                        <td className='animalgrid-col'>
                             <div>
-
+                                <div className='animalgrid'>
+                                    {animals.map((animal) => (
+                                        <div key={animal.name} className='animalgrid-item' onClick={() => handleAnimalClick(animal.name)}>
+                                            <img src={require(`../assets/img/${animal.img}`)} alt={animal.name} className='animal-image' />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </td>
                     </tr>
