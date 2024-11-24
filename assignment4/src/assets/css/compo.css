@@ -14,9 +14,9 @@
     padding: 10px;
     text-align: center;
     vertical-align: top;
+    font-weight: bolder;
+    font-size: large;
   }
-  
-  
   
   .result-col,
   .animalname-col {
@@ -29,6 +29,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
+    background-color: #6d8de6;
   }
   
   .animalgrid-item{
