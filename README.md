@@ -13,6 +13,7 @@ The **Animal Matching Game** is a fun and educational game designed for children
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [How to Play](#how-to-play)
+- [Outputs](#Outputs)
 - [License](#license)
 
 ## Features 🚀
@@ -79,16 +80,17 @@ The project structure is as follows:
 
 ```
 animal-matching-game/
-├── public/
-│   ├── index.html       # HTML template
 ├── src/
-│   ├── assets/          # Images and media assets
-│   ├── components/      # React components (e.g., AnimalGrid, AnimalName)
-│   ├── App.js           # Main app component
-│   ├── index.js         # Entry point for React
-│   ├── styles/          # CSS files for styling the app
-│   ├── utils/           # Utility functions (e.g., for checking answers)
-└── package.json         # Project metadata and dependencies
+│   ├── assets/
+│   │   ├── img/           # Folder for images of animals
+│   │   ├── data/          # Folder for data files (like AnimalsDb.js)
+│   │   └── css/           # Folder for CSS files (for styles)
+│   ├── components/
+│   │   └── AnimalTable.js  # Displays the grid of animal images
+│   ├── App.js              # Main game component (handles logic and state)
+│   ├── index.js            # Entry point for React
+└── public/
+    └── index.html
 ```
 
 ### Key Files 📂:
@@ -119,6 +121,18 @@ We welcome contributions to improve this project! If you would like to contribut
    - If you select the correct animal, **"WIN"** will be displayed.
    - If you select the incorrect animal, **"LOSE"** will be displayed.
 4. After the feedback is shown, the game **automatically resets** for the next round, and a new animal name will appear.
+
+## Outputs:
+
+**Win**
+
+![Win](https://github.com/user-attachments/assets/92a10d57-63b3-4bcb-b779-e26ffdebaf5a)
+
+**Lose**
+
+![Lose](https://github.com/user-attachments/assets/d26515e9-0423-4874-a64c-309c6f9a500e)
+
+
 
 ## License 📄
 
